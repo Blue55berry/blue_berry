@@ -129,6 +129,41 @@ span{
     border-radius: 6px;
     padding: 5px;
 }
+        #abi{
+    padding: 10px;
+    margin: 10px;
+    font-family: sans-serif;
+    font-weight: 80px;
+    color: black;
+}
+.over-layout{
+    background-color: black;
+    opacity: 0.9;
+    position: absolute;
+    width: 100%;
+    height: 1600px;
+    top: 0;
+    display: none;
+}
+.popup-box{
+    top: 0;
+    position: absolute;
+    border: solid 1px white;
+    text-align: center;
+   left: 40%;
+   margin-top: 300px;
+   padding: 40px;
+   color: white;
+   background-color: pink;
+   display: none;
+
+}
+.btz{
+    display: flex;
+    float: right;
+   margin-top: 5px;
+   margin-right: 6px;
+}
     </style>
 </head>
 <body>
@@ -143,6 +178,7 @@ span{
             <li class="achu"> <a href="https://blue55berry.github.io/gk_cakes_order/">Menu<span class="material-symbols-outlined">
                 list
                 </span></a></li>
+            <li class="imsa" id="abi"><button>Log-in</button></li>
            
         </ul>
     </div>
@@ -177,11 +213,57 @@ span{
 <div class="about">
 <p>Dive into the rich and irresistible flavors of our Chocolate Cake, crafted to perfection with layers of moist chocolate sponge and decadent chocolate frosting.</p>
 </div>
+<div class="over-layout"></div>
+<div class="popup-box">
+    <table>
+        <tr>
+            <td>Name:</td> <td><input type="text"  placeholder="Enter your name"/></td>
+        </tr>
+        <tr>
+            <td>Age:</td> <td><input type="number" placeholder="Enter your age"/></td>
+        </tr>
+        <tr>
+            <td>Gender:</td> <td><input type="radio" name="Gender">
+            Male <input type="radio" name="Gender"> Female</td>
+        </tr>
+        <tr>
+            <td>Address:</td> <td><input type="text" placeholder="Enter your address"/></td>
+        </tr>
+
+    </table>
+    <div class="btz">
+        <button>Submit</button>
+    </div>
+    <div>
+        <button class="btz" id="cancel">Cancel</button>
+    </div>
+</div>
 <script>
     document.addEventListener("contextmenu",function(event){
         alert("Follow Pandriya Da Body Soda");
         event.preventDefault();
     })
+
+    var overlayout = document.querySelector(".over-layout")
+    var popupbox = document.querySelector(".popup-box")
+    var abi = document.getElementById("abi")
+
+    abi.addEventListener("click",function(){
+        popupbox.style.display = "block"
+        overlayout.style.display= "block"
+    })
+
+
+var cancel = document.getElementById("cancel")
+
+    cancel.addEventListener("click",function(event){
+        event.preventDefault()
+
+        popupbox.style.display = "none"
+        overlayout.style.display= "none"
+
+    })
+    
    </script>
 </body>
 </html>
